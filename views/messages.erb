@@ -15,9 +15,9 @@
         # filling the content from
         # the message
       %>
+      <% @messages.each do |m| %>
 
       <div class="message">
-        <% @messages.each do |m| %>
         <div class="to">
           <%= m.to%>
         </div>
@@ -30,8 +30,8 @@
         <div class="time">
           <%= m.created_at %>
         </div>
-        <% end %>
       </div>
+        <% end %>
 
     </div>
   </body>
