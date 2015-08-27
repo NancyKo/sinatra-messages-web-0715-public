@@ -9,7 +9,7 @@
     <div class="header">My Messages</div>
 
     <div id="message-stream">
-      <%
+      <% 
         # for each message in @messages
         # render the template below
         # filling the content from
@@ -17,14 +17,20 @@
       %>
 
       <div class="message">
+        <% @messages.each do |m| %>
         <div class="to">
+          <%= m.to%>
         </div>
         <div class="from">
+          <%= m.from %>
         </div>
         <div class="content">
+          <%= m.content %>
         </div>
         <div class="time">
+          <%= m.created_at %>
         </div>
+        <% end %>
       </div>
 
     </div>

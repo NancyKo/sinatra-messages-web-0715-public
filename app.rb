@@ -1,3 +1,4 @@
+require 'pry'
 class MessagesApp < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
@@ -7,6 +8,15 @@ class MessagesApp < Sinatra::Base
     @messages = Message.all
     @body_class = "messages"
 
+    erb :messages
+  end
+
+  post '/' do
+    @messages = Message.all
+    m = Message.create(
+      to: params["to"],
+      from: params["from"],
+      content: params["content"])
     erb :messages
   end
 

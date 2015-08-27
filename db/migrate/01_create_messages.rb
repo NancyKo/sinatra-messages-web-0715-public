@@ -8,6 +8,9 @@
 class CreateMessages < ActiveRecord::Migration
   def change
     create_table :messages do |t|
+      t.string :to
+      t.string :from
+      t.text :content
     end
   end
 end
